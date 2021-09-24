@@ -14,8 +14,7 @@ namespace contactWinForm
     public partial class MainForm : Form
     {
         private BusinessLogicLayer _bussinessLogicLayer = new BusinessLogicLayer();
-
-        
+ 
         public MainForm()
         {
             InitializeComponent();
@@ -27,10 +26,18 @@ namespace contactWinForm
         {
             openContactAddDialog();
         }
+
         private void MainForm_Load(object sender, EventArgs e)
         {
             getDB();
         }
+
+        private void btnSearch_Click(object sender, EventArgs e)
+        {
+            getDB(searchBox.Text);
+            searchBox.Text = string.Empty;
+        }
+
         #endregion
 
 
@@ -41,14 +48,6 @@ namespace contactWinForm
             AddContact addContact = new AddContact();
             addContact.ShowDialog(this);
         }
-
-        public void getDB(string searchText = null)
-        {
-            List<Contact> contacts = _bussinessLogicLayer.GetContacts(searchText);
-            gridContacts.DataSource = contacts;
-        }
-
-        #endregion
 
         private Contact contactFromRow(DataGridViewCellEventArgs e)
         {
@@ -87,10 +86,16 @@ namespace contactWinForm
             _bussinessLogicLayer.DeleteContact(id);
         }
 
-        private void btnSearch_Click(object sender, EventArgs e)
+        #endregion
+
+
+        #region PUBLIC METHODS
+        public void getDB(string searchText = null)
         {
-            getDB(searchBox.Text);
-            searchBox.Text = string.Empty;
+            List<Contact> contacts = _bussinessLogicLayer.GetContacts(searchText);
+            gridContacts.DataSource = contacts;
         }
+
+        #endregion
     }
 }

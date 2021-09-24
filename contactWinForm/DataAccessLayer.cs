@@ -88,6 +88,7 @@ namespace contactWinForm
             }
             finally { conexion.Close(); }
         }
+
         public void DeleteContact(int id)
         {
             try

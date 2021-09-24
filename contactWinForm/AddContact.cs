@@ -22,14 +22,10 @@ namespace contactWinForm
             _businessLogicLayer = new BusinessLogicLayer();
         }
 
+        #region EVENTS
         private void btnCancel_Click(object sender, EventArgs e)
         {
             closeDialog();
-        }
-
-        public void closeDialog()
-        {
-            this.Close();
         }
 
         private void btnSend_Click(object sender, EventArgs e)
@@ -37,6 +33,16 @@ namespace contactWinForm
             newContact();
             this.Close();
             ((MainForm)this.Owner).getDB();
+        }
+
+
+        #endregion
+
+        #region PRIVATE METHODS
+
+        public void closeDialog()
+        {
+            this.Close();
         }
 
         private void newContact()
@@ -53,6 +59,10 @@ namespace contactWinForm
             _businessLogicLayer.saveContact(contact);
         }
 
+
+        #endregion
+
+        #region PUBLIC METHODS
         public void loadContact(Contact contact)
         {
             _contact = contact;
@@ -74,5 +84,8 @@ namespace contactWinForm
             phoneBox.Text = string.Empty;
             addressBox.Text = string.Empty;
         }
+
+        #endregion
+
     }
 }
