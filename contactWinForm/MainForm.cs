@@ -74,17 +74,17 @@ namespace contactWinForm
             }
             else if (cell.Value.ToString() == "Delete")
             {
-                int id = int.Parse(gridContacts.Rows[e.RowIndex].Cells[0].Value.ToString());
-                DeleteContact(id);
+                Contact contact = contactFromRow(e);
+                contact.DeleteContact(contact.ID);
                 getDB();
             }
 
         }
 
-        private void DeleteContact(int id)
+        /*private void DeleteContact(int id)
         {
             _bussinessLogicLayer.DeleteContact(id);
-        }
+        }*/
 
         #endregion
 

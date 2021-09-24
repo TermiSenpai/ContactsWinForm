@@ -16,13 +16,13 @@ namespace contactWinForm
             _dataAccessLayer = new DataAccessLayer();
         }
 
-        public Contact saveContact(Contact contact)
+        /*public Contact saveContact(Contact contact)
         {
             if (contact.ID == 0) _dataAccessLayer.InsertContact(contact);
             else _dataAccessLayer.UpdateContact(contact);
 
             return contact;
-        }
+        }*/
 
         public List<Contact> GetContacts(string searchText = null)
         {

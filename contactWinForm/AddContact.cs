@@ -56,7 +56,8 @@ namespace contactWinForm
 
             contact.ID = _contact != null ? _contact.ID : 0;
 
-            _businessLogicLayer.saveContact(contact);
+            contact.saveContact();
+            //_businessLogicLayer.saveContact(contact);
         }
 
 
