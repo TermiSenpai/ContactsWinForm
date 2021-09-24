@@ -16,11 +16,23 @@ namespace contactWinForm
             _dataAccessLayer = new DataAccessLayer();
         }
 
-        /*public Contact saveContact(Contact contact)
+        public Contact saveContact(Contact contact)
         {
-            //if (contact.ID == 0) //_dataAccessLayer.insetContact;
-            //else //_dataAccessLayer.updateContact;
+            if (contact.ID == 0) _dataAccessLayer.InsertContact(contact);
+            else _dataAccessLayer.UpdateContact(contact);
+
+            return contact;
         }
-        */
+
+        public List<Contact> GetContacts(string searchText = null)
+        {
+            return _dataAccessLayer.GetContacts(searchText);
+        }
+
+        public void DeleteContact(int id)
+        {
+            _dataAccessLayer.DeleteContact(id);
+        }
+
     }
 }

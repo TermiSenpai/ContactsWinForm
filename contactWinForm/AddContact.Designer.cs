@@ -31,11 +31,11 @@ namespace contactWinForm
         {
             this.nameLabel = new System.Windows.Forms.Label();
             this.nameBox = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.lastNameBox = new System.Windows.Forms.TextBox();
             this.lastNameLabel = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.phoneBox = new System.Windows.Forms.TextBox();
             this.phoneLabel = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.addressBox = new System.Windows.Forms.TextBox();
             this.addressLabel = new System.Windows.Forms.Label();
             this.btnSend = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
@@ -59,12 +59,12 @@ namespace contactWinForm
             this.nameBox.Size = new System.Drawing.Size(192, 22);
             this.nameBox.TabIndex = 1;
             // 
-            // textBox1
+            // lastNameBox
             // 
-            this.textBox1.Location = new System.Drawing.Point(193, 80);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(192, 22);
-            this.textBox1.TabIndex = 3;
+            this.lastNameBox.Location = new System.Drawing.Point(193, 80);
+            this.lastNameBox.Name = "lastNameBox";
+            this.lastNameBox.Size = new System.Drawing.Size(192, 22);
+            this.lastNameBox.TabIndex = 3;
             // 
             // lastNameLabel
             // 
@@ -77,12 +77,12 @@ namespace contactWinForm
             this.lastNameLabel.TabIndex = 2;
             this.lastNameLabel.Text = "Last name";
             // 
-            // textBox2
+            // phoneBox
             // 
-            this.textBox2.Location = new System.Drawing.Point(193, 132);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(192, 22);
-            this.textBox2.TabIndex = 5;
+            this.phoneBox.Location = new System.Drawing.Point(193, 132);
+            this.phoneBox.Name = "phoneBox";
+            this.phoneBox.Size = new System.Drawing.Size(192, 22);
+            this.phoneBox.TabIndex = 5;
             // 
             // phoneLabel
             // 
@@ -95,12 +95,12 @@ namespace contactWinForm
             this.phoneLabel.TabIndex = 4;
             this.phoneLabel.Text = "Phone";
             // 
-            // textBox3
+            // addressBox
             // 
-            this.textBox3.Location = new System.Drawing.Point(193, 183);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(192, 22);
-            this.textBox3.TabIndex = 7;
+            this.addressBox.Location = new System.Drawing.Point(193, 183);
+            this.addressBox.Name = "addressBox";
+            this.addressBox.Size = new System.Drawing.Size(192, 22);
+            this.addressBox.TabIndex = 7;
             // 
             // addressLabel
             // 
@@ -122,6 +122,7 @@ namespace contactWinForm
             this.btnSend.TabIndex = 8;
             this.btnSend.Text = "Send";
             this.btnSend.UseVisualStyleBackColor = true;
+            this.btnSend.Click += new System.EventHandler(this.btnSend_Click);
             // 
             // btnCancel
             // 
@@ -142,15 +143,16 @@ namespace contactWinForm
             this.ClientSize = new System.Drawing.Size(407, 355);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnSend);
-            this.Controls.Add(this.textBox3);
+            this.Controls.Add(this.addressBox);
             this.Controls.Add(this.addressLabel);
-            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.phoneBox);
             this.Controls.Add(this.phoneLabel);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.lastNameBox);
             this.Controls.Add(this.lastNameLabel);
             this.Controls.Add(this.nameBox);
             this.Controls.Add(this.nameLabel);
             this.Name = "AddContact";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "AddContact";
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -161,11 +163,11 @@ namespace contactWinForm
 
         private System.Windows.Forms.Label nameLabel;
         private System.Windows.Forms.TextBox nameBox;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox lastNameBox;
         private System.Windows.Forms.Label lastNameLabel;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox phoneBox;
         private System.Windows.Forms.Label phoneLabel;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox addressBox;
         private System.Windows.Forms.Label addressLabel;
         private System.Windows.Forms.Button btnSend;
         private System.Windows.Forms.Button btnCancel;
